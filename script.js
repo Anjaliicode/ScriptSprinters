@@ -1,4 +1,3 @@
-// script.js
 document.querySelectorAll(".service-box").forEach((box) => {
   box.addEventListener("mouseenter", () => {
     box.style.transform = "translateY(-15px)";

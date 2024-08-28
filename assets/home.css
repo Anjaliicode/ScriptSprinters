@@ -1,4 +1,3 @@
-/* styles.css */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -43,7 +42,7 @@ body {
 }
 
 #blockchain {
-  background-color: #4caf50; /* Greenish tone to represent blockchain technology */
+  background-color: #4caf50; 
 }
 
 #exchange {
