@@ -59,3 +59,172 @@ nav>div.container{
         padding-left:25px;
     }
 }
+/* General section */
+.deepa-section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    background-color: #0D102C;
+    overflow: hidden;
+    font-family: 'Questrial', sans-serif;
+}
+
+.sectionHeader {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-family: 'Questrial', sans-serif;
+
+}
+
+.sectionPara {
+    color: #ddd;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+}
+
+/* Grid Section */
+.deepa-gridSection {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Questrial', sans-serif;
+}
+
+.sectionDesc {
+    flex: 1;
+    padding: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: black;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #1f1f38;
+    transform: translateY(-5px);
+}
+
+.sectionPic {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.sectionPic img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.sectionPic img:hover {
+    transform: scale(1.1);
+}
+
+/* Fund Section */
+.deepa-fundSection {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #0D102C;
+    border-radius: 10px;
+    font-family: 'Questrial', sans-serif;
+}
+
+.deepa-fundsContainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fund {
+    background-color: #1f1f38;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 23%;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    
+}
+
+.fund:hover {
+    transform: translateY(-10px);
+    background-color: #1f1f38;
+    box-shadow: 0px 10px 20px rgba(240, 228, 225, 0.4);
+}
+
+.fund img {
+    width: 60px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.fund:hover img {
+    transform: scale(1.1);
+}
+
+.fundType {
+    color:white;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.darkPara {
+    color: #ddd;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .deepa-gridSection {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sectionPic {
+        margin-top: 20px;
+    }
+
+    .sectionHeader {
+        font-size: 2rem;
+    }
+
+    .sectionPara {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .fund {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fund {
+        width: 100%;
+    }
+
+    .sectionHeader {
+        font-size: 1.8rem;
+    }
+
+    .sectionPara {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+    }
+}
