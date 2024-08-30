@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+}
+
+.container {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before,
+.container::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -100%;
+  left: -100%;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+  animation: moveBackground 10s linear infinite;
+}
+
+.container::after {
+  animation-direction: reverse;
+}
+
+@keyframes moveBackground {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form-container {
+  position: relative;
+  z-index: 1;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 1em;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.input-box label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 1em;
+  color: #fff;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -15px;
+  left: 0;
+  font-size: 0.8em;
+  color: #3d51f2;
+}
+
+.forgot-password {
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+  color: #3d51f2;
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  color: #fff;
+}
+
+.signup-button {
+  width: 100%;
+  padding: 10px;
+  background: #3d51f2;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signup-button:hover {
+  background: #2b38c0;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .input-box input {
+    font-size: 0.9em;
+  }
+
+  .forgot-password {
+    font-size: 0.8em;
+  }
+
+  .signup-button {
+    font-size: 0.9em;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .input-box input {
+    font-size: 0.8em;
+  }
+
+  .forgot-password {
+    font-size: 0.7em;
+  }
+
+  .signup-button {
+    font-size: 0.8em;
+    padding: 6px;
+  }
+}
