@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    overflow: hidden;
+    animation: backgroundAnimation 15s ease infinite;
+}
+
+@keyframes backgroundAnimation {
+    0% {
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+    }
+    50% {
+        background: linear-gradient(135deg, #243b55, #141e30);
+    }
+    100% {
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    
+    background-size: 400% 400%;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    animation: zoomIn 0.8s ease-out, gradientShift 15s ease infinite;
+}
+
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    top: -50%;
+    left: -50%;
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 0;
+    pointer-events: none;
+    animation: moveBlocks 10s linear infinite;
+}
+
+.container::after {
+    animation-direction: reverse;
+}
+
+@keyframes moveBlocks {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(50%, 50%) rotate(180deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.form-container {
+    position: relative;
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    
+    color: #eaeaea;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #eaeaea;
+    color: #eaeaea;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-box label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 1em;
+    color: #eaeaea;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -15px;
+    left: 0;
+    font-size: 0.8em;
+    color: #76c7c0;
+}
+
+.input-box input:focus {
+    border-color: #76c7c0;
+    box-shadow: 0 2px 5px rgba(118, 199, 192, 0.3);
+}
+
+.link-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.signin {
+    color: #76c7c0;
+    text-decoration: none;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.signin:hover {
+    color: #eaeaea;
+}
+
+
+
+.reset-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    background: #45716d;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+}
+
+.reset-button:hover {
+    background: #5fa89d;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .input-box input {
+        font-size: 0.9em;
+    }
+
+    
+    .signin {
+        font-size: 0.8em;
+    }
+
+    .reset-button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .input-box input {
+        font-size: 0.8em;
+    }
+
+    
+    .signin {
+        font-size: 0.7em;
+    }
+
+    .reset-button {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+}

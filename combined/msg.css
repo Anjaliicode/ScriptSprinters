@@ -1,0 +1,99 @@
+body {
+    background-color: #121212; /* Dark background */
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.modal {
+    background-color: #1E1E2F; /* Dark background */
+    color: #FFFFFF; /* White text color */
+    border-radius: 12px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.modal-header .icon {
+    margin-right: 8px;
+    color: #FFD700; /* Gold color */
+    animation: iconBounce 1s ease-in-out;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #FF6347; /* Tomato color */
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #FF4500; /* Darker tomato color */
+}
+
+.modal-body {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.modal-body p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-ok {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-ok:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes iconBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
